@@ -1,0 +1,54 @@
+﻿@model List<TechTestAspNet.Models.Cruise>
+
+@{
+    ViewData["Title"] = "Cruise List";
+}
+
+<h1>Cruise List</h1>
+
+@if (ViewData["ErrorMessage"] != null)
+{
+    <div class="alert alert-danger" role="alert">
+        @ViewData["ErrorMessage"]
+    </div>
+}
+
+@if (Model == null || !Model.Any())
+{
+    <p>No cruises available.</p>
+}
+else
+{
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>Trip Name</th>
+                <th>Itinerary</th>
+                <th>Start Date</th>
+                <th>Embarkation Port</th>
+                <th>Ship</th>
+                <th>Inclusions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var cruise in Model)
+            {
+                <tr>
+                    <td>@cruise.TripName</td>
+                    <td>@cruise.ItineraryName</td>
+                    <td>@cruise.EmbarkationDateLong</td>
+                    <td>@cruise.EmbarkationPort</td>
+                    <td>@cruise.Ship</td>
+                    <td>
+                        <ul>
+                            @foreach (var inclusion in cruise.Inclusions.Split("\r\n", StringSplitOptions.RemoveEmptyEntries))
+                            {
+                                <li>@inclusion</li>
+                            }
+                        </ul>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
