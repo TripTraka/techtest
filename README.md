@@ -64,8 +64,8 @@ Modify an existing ASP.NET 8 project to implement a search function for filterin
 Project Setup:
 
 The ASP.NET 8 project is located in the aspnet/TestTestAspNet folder of the repository.
-The data source is the same as the android project and is located in aspnet/TechTestAspNet
-Data loading and display is already implemented for you
+The data source is the same as the android project and is located in aspnet/TechTestAspNet/Data, however
+the loading and display is already implemented for you.
 
 
 ### Controller and View Modifications:
