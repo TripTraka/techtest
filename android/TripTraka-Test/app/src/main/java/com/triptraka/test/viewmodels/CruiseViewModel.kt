@@ -24,6 +24,11 @@ class CruiseViewModel : ViewModel() {
                     it.startDate.dateFormatted().lowercase().contains(query)
         }
 
+    fun loadCruiseData(data: List<Cruise>) {
+        _cruises.clear()
+        _cruises.addAll(data)
+    }
+
     fun loadCruisesFromJson(context: Context) {
         val inputStream = context.resources.openRawResource(R.raw.eu2025)
         val jsonString = inputStream.bufferedReader().use { it.readText() }
@@ -38,9 +43,7 @@ class CruiseViewModel : ViewModel() {
                 startDate = obj.getString("StartDate")
             )
         }
-
-        _cruises.clear()
-        _cruises.addAll(cruiseList)
+        loadCruiseData(cruiseList)
     }
 
     fun onSearchQueryChange(query: String) {
