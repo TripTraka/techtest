@@ -6,6 +6,13 @@
 
 <h1>Cruise List</h1>
 
+<form method="get" asp-controller="Home" asp-action="Index" class="mb-3">
+    <div class="input-group">
+        <input type="text" name="search" value="@ViewData["Search"]" class="form-control" placeholder="Search cruises...">
+        <button class="btn btn-primary" type="submit">Search</button>
+    </div>
+</form>
+
 @if (ViewData["ErrorMessage"] != null)
 {
     <div class="alert alert-danger" role="alert">
@@ -15,7 +22,7 @@
 
 @if (Model == null || !Model.Any())
 {
-    <p>No cruises available.</p>
+    <p>No cruises found matching your search.</p>
 }
 else
 {
@@ -36,7 +43,7 @@ else
                 <tr>
                     <td>@cruise.TripName</td>
                     <td>@cruise.ItineraryName</td>
-                    <td>@cruise.EmbarkationDateLong</td>
+                    <td>@TechTestAspNet.Helpers.DateHelper.FormatDate(cruise.StartDate)</td>
                     <td>@cruise.EmbarkationPort</td>
                     <td>@cruise.Ship</td>
                     <td>

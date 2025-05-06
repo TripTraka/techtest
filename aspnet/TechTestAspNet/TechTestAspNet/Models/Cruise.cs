@@ -17,7 +17,7 @@ namespace TechTestAspNet.Models
         public string? ItineraryName { get; set; }
 
         [JsonPropertyName("StartDate")]
-        public DateTime StartDate { get; set; }
+        public DateTime? StartDate { get; set; }
 
         [JsonPropertyName("EmbarkationPort")]
         public string? EmbarkationPort { get; set; }
