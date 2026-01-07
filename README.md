@@ -1,4 +1,4 @@
-# Technical Test Instructions for Mobile Developer Role
+# Technical Test Instructions for .NET Developer Role
 
 ## Overview
 This technical test evaluates your skills in development using C# with ASP.NET 8. The test consists of two tasks, each focusing on one of these areas. Your solutions will be assessed based on:
@@ -9,7 +9,7 @@ This technical test evaluates your skills in development using C# with ASP.NET 8
 As the time is limited we do not expect a perfect solution.  Do the best you can in the time allocated and see how far you can get.  If you finish the tasks quickly you can expand the solution by adding the ability to search on additional fields and/or unit tests.
 
 
-## Task 2: ASP.NET 8 Backend Development with C#
+## Task 1: ASP.NET 8 Backend Development with C#
 
 ### Objective
 Modify an existing ASP.NET 8 project to implement a search function for filtering by cruise name or embarkation port.
